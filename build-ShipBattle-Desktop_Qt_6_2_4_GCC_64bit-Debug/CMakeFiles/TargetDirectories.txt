@@ -1,5 +1,0 @@
-/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
-/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
-/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/CMakeFiles/ShipBattle.dir
-/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/CMakeFiles/ShipBattle_autogen_timestamp_deps.dir
-/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/CMakeFiles/ShipBattle_autogen.dir
