@@ -1,0 +1,45 @@
+# ninja log v5
+0	223	1654464465365475436	ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+0	223	1654464465365475436	ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+0	223	1654464465365475436	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+0	223	1654464465365475436	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+224	2391	1654464467537472912	CMakeFiles/ShipBattle.dir/ShipBattle_autogen/mocs_compilation.cpp.o	883b29c6851b7447
+223	2591	1654464467737472680	CMakeFiles/ShipBattle.dir/main.cpp.o	b4545044af989deb
+224	2708	1654464467853472545	CMakeFiles/ShipBattle.dir/mainwindow.cpp.o	7fdb39993b30bb1e
+2708	3168	1654464468309472016	ShipBattle	4259d46c3626f8a4
+4	26	1654465042655766029	ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+4	26	1654465042655766029	ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+4	26	1654465042655766029	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+4	26	1654465042655766029	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+27	2473	1654465045103771368	CMakeFiles/ShipBattle.dir/mainwindow.cpp.o	7fdb39993b30bb1e
+2473	2935	1654465045563772368	ShipBattle	4259d46c3626f8a4
+2	22	1654465065443814702	ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	22	1654465065443814702	ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+2	22	1654465065443814702	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	22	1654465065443814702	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+24	2465	1654465067887819789	CMakeFiles/ShipBattle.dir/mainwindow.cpp.o	7fdb39993b30bb1e
+2465	2932	1654465068347820744	ShipBattle	4259d46c3626f8a4
+2	24	1654465125619932847	ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	24	1654465125619932847	ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+2	24	1654465125619932847	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	24	1654465125619932847	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+25	2520	1654465128115937440	CMakeFiles/ShipBattle.dir/mainwindow.cpp.o	7fdb39993b30bb1e
+2520	2991	1654465128583938298	ShipBattle	4259d46c3626f8a4
+1	20	1654465820624604755	ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+1	20	1654465820624604755	ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+1	20	1654465820624604755	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+1	20	1654465820624604755	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+21	2653	1654465823256605819	CMakeFiles/ShipBattle.dir/mainwindow.cpp.o	7fdb39993b30bb1e
+2653	3171	1654465823772606026	ShipBattle	4259d46c3626f8a4
+2	19	1654465847716615382	ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	19	1654465847716615382	ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+2	19	1654465847716615382	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	19	1654465847716615382	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+21	2683	1654465850380616390	CMakeFiles/ShipBattle.dir/mainwindow.cpp.o	7fdb39993b30bb1e
+2683	3184	1654465850876616577	ShipBattle	4259d46c3626f8a4
+2	19	1654465925652642293	ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	19	1654465925652642293	ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+2	19	1654465925652642293	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/timestamp	f4f58e7684d5b9ba
+2	19	1654465925652642293	/home/piotrek/Informatyka-studia/Semestr 4/C++/ships_project/ship_battle/build-ShipBattle-Desktop_Qt_6_2_4_GCC_64bit-Debug/ShipBattle_autogen/mocs_compilation.cpp	f4f58e7684d5b9ba
+20	2658	1654465928292643116	CMakeFiles/ShipBattle.dir/mainwindow.cpp.o	7fdb39993b30bb1e
+2658	3139	1654465928772643266	ShipBattle	4259d46c3626f8a4
