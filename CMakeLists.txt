@@ -19,8 +19,10 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        player.h
-        player.cpp
+        player.h player.cpp
+        ship.h ship.cpp
+        defines.h
+        grid.h grid.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
