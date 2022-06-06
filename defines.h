@@ -1,7 +1,7 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
-enum GridField {Empty, Ship, Checked, HitShip};
+enum GridField {Empty, Occupied, CheckedFree, HitShip};
 
 const int mapSize = 10;
 

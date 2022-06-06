@@ -15,6 +15,7 @@ PlaceShipsWindow::PlaceShipsWindow(QWidget *parent) :
     QGridLayout * grid = ui->gridLayout_2;
     QSignalMapper * signalMapper = new QSignalMapper();
 
+
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
             QToolButton * button = new QToolButton(this);

@@ -16,8 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(submit, SIGNAL(clicked()), this, SLOT(showPlaceShips()));
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow(){
     delete ui;
 }
 
