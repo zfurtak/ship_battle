@@ -23,7 +23,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::showPlaceShips() {
     PlaceShipsWindow placeShipsWindow;
-    placeShipsWindow.setModal(false);
+    placeShipsWindow.setModal(true);
     hide();
     placeShipsWindow.exec();
 }

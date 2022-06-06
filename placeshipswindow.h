@@ -2,6 +2,9 @@
 #define PLACESHIPSWINDOW_H
 
 #include <QDialog>
+#include <QToolButton>
+#include <QHash>
+#include <QSignalMapper>
 
 namespace Ui {
 class PlaceShipsWindow;
@@ -17,8 +20,11 @@ public:
 
 private:
     Ui::PlaceShipsWindow *ui;
+    QHash<QToolButton*, QPair<int, int>> buttonHash;
+    QSignalMapper * signalMapper;
 public slots:
     void showGameWindow();
+    void buttonClicked(QObject*);
 };
 
 #endif // PLACESHIPSWINDOW_H

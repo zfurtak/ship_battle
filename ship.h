@@ -5,7 +5,7 @@
 class Ship
 {
 public:
-    Ship(int, int, int, int=0);
+    explicit Ship(int, int, int, int=0);
     int getSize() {
         return size;
     }
