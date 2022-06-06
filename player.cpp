@@ -1,8 +1,10 @@
 #include "player.h"
 
-Player::Player(string name) : name(name)
-{}
+Player::Player(std::string name) : name(name)
+{
+    playerGrid = Grid();
+}
 
-void Player::addShip(Ship * newShip) {
+void Player::addShip(class Ship * newShip) {
     ships.push_back(newShip);
 }

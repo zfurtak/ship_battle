@@ -14,8 +14,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
 private:
     Ui::MainWindow *ui;
+public slots:
+    void showPlaceShips();
 };
 #endif // MAINWINDOW_H

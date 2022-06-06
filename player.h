@@ -2,23 +2,24 @@
 #define PLAYER_H
 
 #include "ship.h"
+#include "grid.h"
 
 #include <string>
 #include <vector>
-using namespace std;
 
 class Player
 {
 public:
-    Player(string);
-    void addShip(Ship*);
+    Player(std::string);
+    void addShip(class Ship*);
     bool isAlive() {
         return remainingShips == 0;
     }
 private:
-    string name;
+    std::string name;
     int remainingShips = 10;
-    vector<Ship*> ships;
+    std::vector<class Ship*> ships;
+    Grid playerGrid;
 };
 
 #endif // PLAYER_H

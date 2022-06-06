@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         ship.h ship.cpp
         defines.h
         grid.h grid.cpp
+        placeshipswindow.h placeshipswindow.cpp placeshipswindow.ui
+        gamewindow.h gamewindow.cpp gamewindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
