@@ -11,10 +11,12 @@ class Player
 {
 public:
     Player(std::string);
-    void addShip(class Ship*);
     bool isAlive() {
         return remainingShips == 0;
     }
+    bool place(class Ship*);
+    bool beenCheckedBefore(int, int);
+    bool makeAShot(int, int);
 private:
     std::string name;
     int remainingShips = 10;

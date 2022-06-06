@@ -12,7 +12,9 @@ public:
         return grid[x][y];
     }
 
-    bool placeShip(class Ship&);
+    void placeShip(class Ship*);
+    void markShipAsHit(int , int);
+    void markSpotAsChecked(int, int);
 private:
     GridField grid[mapSize][mapSize];
 };
