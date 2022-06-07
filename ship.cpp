@@ -28,3 +28,17 @@ bool Ship::hit(int x, int y) {
 
     return false;
 }
+
+void Ship::setPosition(int x, int y) {
+    this->x = x;
+    this->y = y;
+}
+
+void Ship::changeOrientation() {
+    if (orientation == 0) {
+        orientation = 1;
+    }
+    else {
+        orientation = 0;
+    }
+}

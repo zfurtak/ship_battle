@@ -27,6 +27,8 @@ public:
     }
 
     bool hit(int, int);
+    void setPosition(int, int);
+    void changeOrientation();
 private:
     int size;
     int hitCounter = 0;

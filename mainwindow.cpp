@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include "placeshipswindow.h"
+#include "player.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -21,7 +22,9 @@ MainWindow::~MainWindow(){
 }
 
 void MainWindow::showPlaceShips() {
-    PlaceShipsWindow placeShipsWindow;
+    Player player1 = Player(ui->username->text().toStdString());
+    Player player2 = Player(ui->username_2->text().toStdString());
+    PlaceShipsWindow placeShipsWindow(player1, player2);
     placeShipsWindow.setModal(true);
     hide();
     placeShipsWindow.exec();
