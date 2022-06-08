@@ -28,8 +28,6 @@ private:
     QHash<QToolButton*, QPair<int, int>> buttonHash2;
     QSignalMapper * signalMapper1;
     QSignalMapper * signalMapper2;
-    bool isOver = false;
-
     void updateGrid1();
     void updateGrid2();
 public slots:
