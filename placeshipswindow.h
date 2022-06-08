@@ -17,7 +17,7 @@ class PlaceShipsWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit PlaceShipsWindow(Player & player1, Player & player2, QWidget *parent = nullptr);
+    explicit PlaceShipsWindow(Player * player1, Player * player2, QWidget *parent = nullptr);
     ~PlaceShipsWindow();
 
 private:
@@ -33,9 +33,9 @@ private:
     int ship2ToPlaced = 3;
     int ship3ToPlaced = 2;
     int ship4ToPlaced = 1;
-    Player & player1;
-    Player & player2;
-    Player & currentPlayer;
+    Player * player1;
+    Player * player2;
+    Player * currentPlayer;
 
     void updateGrid();
     void resetButtonColors();
