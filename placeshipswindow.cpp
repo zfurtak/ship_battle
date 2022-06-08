@@ -61,39 +61,42 @@ PlaceShipsWindow::~PlaceShipsWindow()
 }
 
 void PlaceShipsWindow::showGameWindow() {
-    if (currentPlayer != player2) {
-        currentPlayer = player2;
-        std::cout << currentPlayer << "  " << player2 << std::endl;
-        ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
-        updateGrid();
-        shipSize1[0] = Ship(1, -1, -1, 0);
-        shipSize1[1] = Ship(1, -1, -1, 0);
-        shipSize1[2] = Ship(1, -1, -1, 0);
-        shipSize1[3] = Ship(1, -1, -1, 0);
+    if(this->currentPlayer->allPlaced()){
+        if (currentPlayer != player2) {
+            currentPlayer = player2;
+            std::cout << currentPlayer << "  " << player2 << std::endl;
+            ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
+            updateGrid();
+            shipSize1[0] = Ship(1, -1, -1, 0);
+            shipSize1[1] = Ship(1, -1, -1, 0);
+            shipSize1[2] = Ship(1, -1, -1, 0);
+            shipSize1[3] = Ship(1, -1, -1, 0);
 
-        shipSize2[0] = Ship(2, -1, -1, 0);
-        shipSize2[1] = Ship(2, -1, -1, 0);
-        shipSize2[2] = Ship(2, -1, -1, 0);
+            shipSize2[0] = Ship(2, -1, -1, 0);
+            shipSize2[1] = Ship(2, -1, -1, 0);
+            shipSize2[2] = Ship(2, -1, -1, 0);
 
-        shipSize3[0] = Ship(3, -1, -1, 0);
-        shipSize3[1] = Ship(3, -1, -1, 0);
+            shipSize3[0] = Ship(3, -1, -1, 0);
+            shipSize3[1] = Ship(3, -1, -1, 0);
 
-        shipSize4[0] = Ship(4, -1, -1, 0);
+            shipSize4[0] = Ship(4, -1, -1, 0);
 
-        ship1ToPlaced = 4;
-        ship2ToPlaced = 3;
-        ship3ToPlaced = 2;
-        ship4ToPlaced = 1;
-        ui->ship_1_label->setText(QString::number(ship1ToPlaced));
-        ui->ship_2_label->setText(QString::number(ship2ToPlaced));
-        ui->ship_3_label->setText(QString::number(ship3ToPlaced));
-        ui->ship_4_label->setText(QString::number(ship4ToPlaced));
-        return;
+            ship1ToPlaced = 4;
+            ship2ToPlaced = 3;
+            ship3ToPlaced = 2;
+            ship4ToPlaced = 1;
+            ui->ship_1_label->setText(QString::number(ship1ToPlaced));
+            ui->ship_2_label->setText(QString::number(ship2ToPlaced));
+            ui->ship_3_label->setText(QString::number(ship3ToPlaced));
+            ui->ship_4_label->setText(QString::number(ship4ToPlaced));
+            return;
+        }
+        GameWindow gameWindow = GameWindow(player1, player2);
+        gameWindow.setModal(true);
+        hide();
+        gameWindow.exec();
     }
-    GameWindow gameWindow = GameWindow(player1, player2);
-    gameWindow.setModal(true);
-    hide();
-    gameWindow.exec();
+
 }
 
 void PlaceShipsWindow::gridClicked(QObject * widget) {
