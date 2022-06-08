@@ -62,7 +62,8 @@ PlaceShipsWindow::~PlaceShipsWindow()
 
 void PlaceShipsWindow::showGameWindow() {
     if (&currentPlayer != &player2) {
-        currentPlayer = player2;
+        currentPlayer = std::move(player2);
+        std::cout << &currentPlayer << "  " << &player2 << std::endl;
         ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer.getName()));
         updateGrid();
         shipSize1[0] = Ship(1, -1, -1, 0);
@@ -82,7 +83,7 @@ void PlaceShipsWindow::showGameWindow() {
         ship1ToPlaced = 4;
         ship2ToPlaced = 3;
         ship3ToPlaced = 2;
-        ship3ToPlaced = 1;
+        ship4ToPlaced = 1;
         ui->ship_1_label->setText(QString::number(ship1ToPlaced));
         ui->ship_2_label->setText(QString::number(ship2ToPlaced));
         ui->ship_3_label->setText(QString::number(ship3ToPlaced));
@@ -158,6 +159,12 @@ void PlaceShipsWindow::changeShipTo1(){
         resetButtonColors();
         ui->ship_1_button->setStyleSheet("background-color: blue");
         currentShip = &shipSize1[ship1ToPlaced - 1];
+        if (currentShip->getOrientation() == 0) {
+            ui->change_orientation->setText("Poziom");
+        }
+        else {
+            ui->change_orientation->setText("Pion");
+        }
     }
 }
 
@@ -166,6 +173,12 @@ void PlaceShipsWindow::changeShipTo2(){
         resetButtonColors();
         ui->ship_2_button->setStyleSheet("background-color: blue");
         currentShip = &shipSize2[ship2ToPlaced - 1];
+        if (currentShip->getOrientation() == 0) {
+            ui->change_orientation->setText("Poziom");
+        }
+        else {
+            ui->change_orientation->setText("Pion");
+        }
     }
 }
 
@@ -174,6 +187,12 @@ void PlaceShipsWindow::changeShipTo3(){
         resetButtonColors();
         ui->ship_3_button->setStyleSheet("background-color: blue");
         currentShip = &shipSize3[ship3ToPlaced - 1];
+        if (currentShip->getOrientation() == 0) {
+            ui->change_orientation->setText("Poziom");
+        }
+        else {
+            ui->change_orientation->setText("Pion");
+        }
     }
 }
 
@@ -182,6 +201,12 @@ void PlaceShipsWindow::changeShipTo4(){
         resetButtonColors();
         ui->ship_4_button->setStyleSheet("background-color: blue");
         currentShip = &shipSize4[ship4ToPlaced - 1];
+        if (currentShip->getOrientation() == 0) {
+            ui->change_orientation->setText("Poziom");
+        }
+        else {
+            ui->change_orientation->setText("Pion");
+        }
     }
 }
 
