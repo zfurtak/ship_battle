@@ -20,6 +20,20 @@ PlaceShipsWindow::PlaceShipsWindow(Player * player1, Player * player2, QWidget *
     signalMapper = new QSignalMapper(this);
     ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
 
+    shipSize1[0] = new Ship(1, -1, -1, 0);
+    shipSize1[1] = new Ship(1, -1, -1, 0);
+    shipSize1[2] = new Ship(1, -1, -1, 0);
+    shipSize1[3] = new Ship(1, -1, -1, 0);
+
+    shipSize2[0] = new Ship(2, -1, -1, 0);
+    shipSize2[1] = new Ship(2, -1, -1, 0);
+    shipSize2[2] = new Ship(2, -1, -1, 0);
+
+    shipSize3[0] = new Ship(3, -1, -1, 0);
+    shipSize3[1] = new Ship(3, -1, -1, 0);
+
+    shipSize4[0] = new Ship(4, -1, -1, 0);
+
     ui->ship_1_label->setText(QString::number(ship1ToPlaced));
     ui->ship_2_label->setText(QString::number(ship2ToPlaced));
     ui->ship_3_label->setText(QString::number(ship3ToPlaced));
@@ -62,24 +76,25 @@ PlaceShipsWindow::~PlaceShipsWindow()
 
 void PlaceShipsWindow::showGameWindow() {
     if(this->currentPlayer->allPlaced()){
+        std::cout << currentPlayer->getName() << std::endl;
+        currentPlayer->printShips();
         if (currentPlayer != player2) {
             currentPlayer = player2;
-            std::cout << currentPlayer << "  " << player2 << std::endl;
             ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
             updateGrid();
-            shipSize1[0] = Ship(1, -1, -1, 0);
-            shipSize1[1] = Ship(1, -1, -1, 0);
-            shipSize1[2] = Ship(1, -1, -1, 0);
-            shipSize1[3] = Ship(1, -1, -1, 0);
+            shipSize1[0] = new Ship(1, -1, -1, 0);
+            shipSize1[1] = new Ship(1, -1, -1, 0);
+            shipSize1[2] = new Ship(1, -1, -1, 0);
+            shipSize1[3] = new Ship(1, -1, -1, 0);
 
-            shipSize2[0] = Ship(2, -1, -1, 0);
-            shipSize2[1] = Ship(2, -1, -1, 0);
-            shipSize2[2] = Ship(2, -1, -1, 0);
+            shipSize2[0] = new Ship(2, -1, -1, 0);
+            shipSize2[1] = new Ship(2, -1, -1, 0);
+            shipSize2[2] = new Ship(2, -1, -1, 0);
 
-            shipSize3[0] = Ship(3, -1, -1, 0);
-            shipSize3[1] = Ship(3, -1, -1, 0);
+            shipSize3[0] = new Ship(3, -1, -1, 0);
+            shipSize3[1] = new Ship(3, -1, -1, 0);
 
-            shipSize4[0] = Ship(4, -1, -1, 0);
+            shipSize4[0] = new Ship(4, -1, -1, 0);
 
             ship1ToPlaced = 4;
             ship2ToPlaced = 3;
@@ -161,7 +176,7 @@ void PlaceShipsWindow::changeShipTo1(){
     if (ship1ToPlaced > 0) {
         resetButtonColors();
         ui->ship_1_button->setStyleSheet("background-color: blue");
-        currentShip = &shipSize1[ship1ToPlaced - 1];
+        currentShip = shipSize1[ship1ToPlaced - 1];
         if (currentShip->getOrientation() == 0) {
             ui->change_orientation->setText("Poziom");
         }
@@ -175,7 +190,7 @@ void PlaceShipsWindow::changeShipTo2(){
     if (ship2ToPlaced > 0) {
         resetButtonColors();
         ui->ship_2_button->setStyleSheet("background-color: blue");
-        currentShip = &shipSize2[ship2ToPlaced - 1];
+        currentShip = shipSize2[ship2ToPlaced - 1];
         if (currentShip->getOrientation() == 0) {
             ui->change_orientation->setText("Poziom");
         }
@@ -189,7 +204,7 @@ void PlaceShipsWindow::changeShipTo3(){
     if (ship3ToPlaced > 0) {
         resetButtonColors();
         ui->ship_3_button->setStyleSheet("background-color: blue");
-        currentShip = &shipSize3[ship3ToPlaced - 1];
+        currentShip = shipSize3[ship3ToPlaced - 1];
         if (currentShip->getOrientation() == 0) {
             ui->change_orientation->setText("Poziom");
         }
@@ -203,7 +218,7 @@ void PlaceShipsWindow::changeShipTo4(){
     if (ship4ToPlaced > 0) {
         resetButtonColors();
         ui->ship_4_button->setStyleSheet("background-color: blue");
-        currentShip = &shipSize4[ship4ToPlaced - 1];
+        currentShip = shipSize4[ship4ToPlaced - 1];
         if (currentShip->getOrientation() == 0) {
             ui->change_orientation->setText("Poziom");
         }

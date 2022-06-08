@@ -1,4 +1,5 @@
 #include "grid.h"
+#include <iostream>
 
 Grid::Grid()
 {
@@ -27,6 +28,7 @@ void Grid::placeShip(class Ship * newShip) {
 
 
 void Grid::sinkWholeShip(Ship * ship){
+    std::cout << "sinking whole" << std::endl;
     int x = ship->getX();
     int y = ship->getY();
     int orient = ship->getOrientation();

@@ -14,10 +14,10 @@ Ship::Ship(int size, int x, int y, int orientation)
 }
 
 bool Ship::isIncluded(int x, int y) {
-    if (orientation == 1 && x - this->x < size && y == this->y) {
+    if (orientation == 1 && x - this->x >= 0 && x - this->x < size && y == this->y) {
         return true;
     }
-    if (orientation == 0 && y - this->y < size && x == this->x) {
+    if (orientation == 0 && y - this->y >= 0 && y - this->y < size && x == this->x) {
         return true;
     }
     return false;

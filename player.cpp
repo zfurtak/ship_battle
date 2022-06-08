@@ -1,5 +1,6 @@
 #include "player.h"
 #include "defines.h"
+#include <iostream>
 
 Player::Player(std::string name) : name(name)
 {
@@ -7,6 +8,8 @@ Player::Player(std::string name) : name(name)
 }
 
 bool Player::place(class Ship * ship_){
+    std::cout << ship_ << std::endl;
+    std::cout << "next" << std::endl;
     int orient = ship_->getOrientation(); // 0 - poziom, 1 - pion
     int row = ship_->getX();
     int col = ship_->getY();
@@ -61,6 +64,7 @@ bool Player::makeAShot(int x, int y){
             this->playerGrid.markShipAsHit(x, y);
 
             Ship* currentShip = this->getShipFromPosition(x, y);
+            std::cout << currentShip << std::endl;
             currentShip->increaseHitCounter();
             if(currentShip->getHitCounter() == currentShip->getSize()){
                 this->remainingShips --;
