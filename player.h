@@ -14,6 +14,9 @@ public:
     bool isAlive() {
         return remainingShips == 0;
     }
+    bool allPlaced(){
+        return this->ships.size() == 10;
+    }
     bool place(class Ship*);
     bool beenCheckedBefore(int, int);
     bool makeAShot(int, int);
