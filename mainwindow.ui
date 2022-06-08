@@ -85,7 +85,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="username"/>
       </item>
       <item>
        <widget class="QLabel" name="label_3">
@@ -101,7 +101,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="username_2"/>
       </item>
       <item alignment="Qt::AlignHCenter">
        <widget class="QPushButton" name="pushButton">

@@ -17,6 +17,12 @@ public:
     bool place(class Ship*);
     bool beenCheckedBefore(int, int);
     bool makeAShot(int, int);
+    const std::string getName() const {
+        return name;
+    }
+    GridField getFieldState(int x, int y) {
+        return playerGrid.getFieldState(x, y);
+    }
 private:
     std::string name;
     int remainingShips = 10;

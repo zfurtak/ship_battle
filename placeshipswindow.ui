@@ -71,11 +71,22 @@
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
-              <widget class="QLabel" name="label_3">
-               <property name="text">
-                <string>Pozostało</string>
-               </property>
-              </widget>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QLabel" name="label_3">
+                 <property name="text">
+                  <string>Pozostało</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignRight">
+                <widget class="QPushButton" name="change_orientation">
+                 <property name="text">
+                  <string>Pion</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -86,16 +97,16 @@
                 <number>5</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_4">
+                <widget class="QLabel" name="ship_1_label">
                  <property name="text">
                   <string>TextLabel</string>
                  </property>
                 </widget>
                </item>
-               <item alignment="Qt::AlignLeft">
-                <widget class="QPushButton" name="pushButton">
+               <item alignment="Qt::AlignRight">
+                <widget class="QPushButton" name="ship_1_button">
                  <property name="text">
-                  <string>PushButton</string>
+                  <string>Długość 1</string>
                  </property>
                 </widget>
                </item>
@@ -110,16 +121,16 @@
                 <number>5</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_5">
+                <widget class="QLabel" name="ship_2_label">
                  <property name="text">
                   <string>TextLabel</string>
                  </property>
                 </widget>
                </item>
-               <item alignment="Qt::AlignLeft">
-                <widget class="QPushButton" name="pushButton_2">
+               <item alignment="Qt::AlignRight">
+                <widget class="QPushButton" name="ship_2_button">
                  <property name="text">
-                  <string>PushButton</string>
+                  <string>Długość 2</string>
                  </property>
                 </widget>
                </item>
@@ -134,16 +145,16 @@
                 <number>5</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_6">
+                <widget class="QLabel" name="ship_3_label">
                  <property name="text">
                   <string>TextLabel</string>
                  </property>
                 </widget>
                </item>
-               <item alignment="Qt::AlignLeft">
-                <widget class="QPushButton" name="pushButton_3">
+               <item alignment="Qt::AlignRight">
+                <widget class="QPushButton" name="ship_3_button">
                  <property name="text">
-                  <string>PushButton</string>
+                  <string>Długość 3</string>
                  </property>
                 </widget>
                </item>
@@ -161,16 +172,16 @@
                 <number>10</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="ship_4_label">
                  <property name="text">
                   <string>TextLabel</string>
                  </property>
                 </widget>
                </item>
-               <item alignment="Qt::AlignLeft">
-                <widget class="QPushButton" name="pushButton_4">
+               <item alignment="Qt::AlignRight">
+                <widget class="QPushButton" name="ship_4_button">
                  <property name="text">
-                  <string>PushButton</string>
+                  <string>Długość 4</string>
                  </property>
                 </widget>
                </item>

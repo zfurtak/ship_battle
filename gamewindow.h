@@ -2,6 +2,7 @@
 #define GAMEWINDOW_H
 
 #include <QDialog>
+#include "player.h"
 
 namespace Ui {
 class GameWindow;
@@ -17,6 +18,8 @@ public:
 
 private:
     Ui::GameWindow *ui;
+    Player & player1;
+    Player & player2;
 };
 
 #endif // GAMEWINDOW_H

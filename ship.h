@@ -5,7 +5,7 @@
 class Ship
 {
 public:
-    Ship(int, int, int, int=0);
+    explicit Ship(int, int, int, int=0);
     int getSize() {
         return size;
     }
@@ -27,6 +27,8 @@ public:
     }
 
     bool hit(int, int);
+    void setPosition(int, int);
+    void changeOrientation();
 private:
     int size;
     int hitCounter = 0;
