@@ -20,6 +20,7 @@ public:
     bool place(class Ship*);
     bool beenCheckedBefore(int, int);
     bool makeAShot(int, int);
+    Ship* getShipFromPosition(int, int);
     const std::string getName() const {
         return name;
     }

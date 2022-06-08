@@ -24,6 +24,32 @@ void Grid::placeShip(class Ship * newShip) {
     }
 }
 
+
+
+void Grid::sinkWholeShip(Ship * ship){
+    int x = ship->getX();
+    int y = ship->getY();
+    int orient = ship->getOrientation();
+    int size = ship->getSize();
+    for(int i = 0; i < size; i++){
+        int col = y;
+        int row = x;
+        if(orient == 0){
+            col = y + i;
+        }else if(orient == 1){
+            row = x + i;
+        }
+        for(int p = -1; p <= 1; p++){
+            for(int k = -1; k <=1; k++){
+                if(col+p >= 0 && col+p < mapSize && row+k >= 0 && row+k < mapSize
+                        && grid[row+k][col+p] == Empty){
+                    grid[row+k][col+p] = CheckedFree;
+                }
+            }
+        }
+    }
+}
+
 void Grid::markShipAsHit(int x, int y){
     grid[x][y] = HitShip;
 }

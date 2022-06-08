@@ -15,6 +15,7 @@ public:
     void placeShip(class Ship*);
     void markShipAsHit(int , int);
     void markSpotAsChecked(int, int);
+    void sinkWholeShip(Ship *);
 private:
     GridField grid[mapSize][mapSize];
 };

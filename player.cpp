@@ -59,10 +59,28 @@ bool Player::makeAShot(int x, int y){
     if(!this->beenCheckedBefore(x, y)){
         if(this->playerGrid.getFieldState(x, y) == Occupied){
             this->playerGrid.markShipAsHit(x, y);
+
+            Ship* currentShip = this->getShipFromPosition(x, y);
+            currentShip->increaseHitCounter();
+            if(currentShip->getHitCounter() == currentShip->getSize()){
+                this->remainingShips --;
+                this->playerGrid.sinkWholeShip(currentShip);
+            }
+
         }else if(this->playerGrid.getFieldState(x, y) == Empty){
             this->playerGrid.markSpotAsChecked(x, y);
         }
         return true;
     }
     return false;
+}
+
+
+Ship* Player::getShipFromPosition(int x, int y){
+    for(Ship * ship_: this->ships){
+        if(ship_->isIncluded(x, y)){
+            return ship_;
+        }
+    }
+    return nullptr;
 }
