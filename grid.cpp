@@ -16,9 +16,9 @@ void Grid::placeShip(class Ship * newShip) {
     int y_coord = newShip->getY();
     int size = newShip->getSize();
     for(int i = 0; i < size; i++){
-        if(orient == 0){
+        if(orient == 1){
             grid[x_coord+i][y_coord] = Occupied;
-        }else if(orient == 1){
+        }else if(orient == 0){
             grid[x_coord][y_coord+i] = Occupied;
         }
     }
