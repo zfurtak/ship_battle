@@ -13,7 +13,7 @@ class GameWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit GameWindow(QWidget *parent = nullptr);
+    explicit GameWindow(Player & player1, Player & player2, QWidget *parent = nullptr);
     ~GameWindow();
 
 private:

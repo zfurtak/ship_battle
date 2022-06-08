@@ -82,7 +82,7 @@
                <item alignment="Qt::AlignRight">
                 <widget class="QPushButton" name="change_orientation">
                  <property name="text">
-                  <string>Pion</string>
+                  <string>Poziom</string>
                  </property>
                 </widget>
                </item>
