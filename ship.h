@@ -21,14 +21,20 @@ public:
     int getOrientation() {
         return orientation;
     }
+    int getHitCounter(){
+        return this->hitCounter;
+    }
 
     bool isSunk() {
         return hitCounter == size;
     }
-
-    bool hit(int, int);
+    void increaseHitCounter(){
+        this->hitCounter ++;
+    }
     void setPosition(int, int);
     void changeOrientation();
+    bool isIncluded(int, int);
+
 private:
     int size;
     int hitCounter = 0;
