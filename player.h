@@ -13,7 +13,7 @@ class Player
 public:
     Player(std::string);
     bool isAlive() {
-        return remainingShips == 0;
+        return remainingShips != 0;
     }
     bool allPlaced(){
         return this->ships.size() == 10;

@@ -78,13 +78,13 @@ void GameWindow::grid1Clicked(QObject * widget) {
     }
 
     if (player2->makeAShot(pair.first, pair.second)) {
-        std::cout << "test1" << std::endl;
         updateGrid1();
         if (player2->getFieldState(pair.first, pair.second) != HitShip) {
             currentPlayer = player2;
             ui->turn_label->setText(QString(" Tura gracza ") + QString::fromStdString(currentPlayer->getName()));
         }
     }
+
 }
 
 void GameWindow::grid2Clicked(QObject * widget) {
@@ -94,13 +94,13 @@ void GameWindow::grid2Clicked(QObject * widget) {
     }
 
     if (player1->makeAShot(pair.first, pair.second)) {
-        std::cout << "test2" << std::endl;
         updateGrid2();
         if (player1->getFieldState(pair.first, pair.second) != HitShip) {
             currentPlayer = player1;
             ui->turn_label->setText(QString(" Tura gracza ") + QString::fromStdString(currentPlayer->getName()));
         }
     }
+
 }
 
 void GameWindow::updateGrid1() {
@@ -111,7 +111,7 @@ void GameWindow::updateGrid1() {
         int y = i.value().second;
         switch(player2->getFieldState(x, y)) {
         case CheckedFree:
-            i.key()->setStyleSheet("background-color: #83d7ee");
+            i.key()->setStyleSheet("background-color: #273be2");
             break;
         case HitShip:
             i.key()->setStyleSheet("background-color: #7B3F00");
@@ -119,6 +119,10 @@ void GameWindow::updateGrid1() {
         default:
             i.key()->setStyleSheet("");
         }
+    }
+    //to dodałam ale włacza sie za pozno
+    if(!player1->isAlive()){
+        ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(currentPlayer->getName()));
     }
 }
 
@@ -130,7 +134,7 @@ void GameWindow::updateGrid2() {
         int y = i.value().second;
         switch(player1->getFieldState(x, y)) {
         case CheckedFree:
-            i.key()->setStyleSheet("background-color: #83d7ee");
+            i.key()->setStyleSheet("background-color: #273be2");
             break;
         case HitShip:
             i.key()->setStyleSheet("background-color: #7B3F00");
@@ -138,5 +142,9 @@ void GameWindow::updateGrid2() {
         default:
             i.key()->setStyleSheet("");
         }
+    }
+    //to dodałam ale włacza sie za pozno
+    if(!player2->isAlive()){
+        ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(currentPlayer->getName()));
     }
 }

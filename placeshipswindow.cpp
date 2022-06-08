@@ -48,7 +48,7 @@ PlaceShipsWindow::PlaceShipsWindow(Player * player1, Player * player2, QWidget *
             button->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
             button->setMaximumHeight(40);
             button->setMaximumWidth(40);
-            button->setStyleSheet("background-color: #83d7ee");
+            button->setStyleSheet("background-color: #273be2");
             grid->addWidget(button, i, j);
 
             connect(button, SIGNAL(clicked()), signalMapper, SLOT(map()));
@@ -161,7 +161,7 @@ void PlaceShipsWindow::updateGrid() {
         int y = i.value().second;
         switch(currentPlayer->getFieldState(x, y)) {
         case Empty:
-            i.key()->setStyleSheet("background-color: #83d7ee");
+            i.key()->setStyleSheet("background-color: #273be2");
             break;
         case Occupied:
             i.key()->setStyleSheet("background-color: #7B3F00");
