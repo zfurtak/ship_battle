@@ -17,7 +17,7 @@ PlaceShipsWindow::PlaceShipsWindow(Player * player1, Player * player2, QWidget *
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
     QGridLayout * grid = ui->gridLayout_2;
-    QSignalMapper * signalMapper = new QSignalMapper(this);
+    signalMapper = new QSignalMapper(this);
     ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
 
     ui->ship_1_label->setText(QString::number(ship1ToPlaced));
@@ -34,7 +34,7 @@ PlaceShipsWindow::PlaceShipsWindow(Player * player1, Player * player2, QWidget *
             button->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
             button->setMaximumHeight(40);
             button->setMaximumWidth(40);
-            button->setStyleSheet("background-color: gray");
+            button->setStyleSheet("background-color: #83d7ee");
             grid->addWidget(button, i, j);
 
             connect(button, SIGNAL(clicked()), signalMapper, SLOT(map()));
@@ -53,7 +53,7 @@ PlaceShipsWindow::PlaceShipsWindow(Player * player1, Player * player2, QWidget *
 
 PlaceShipsWindow::~PlaceShipsWindow()
 {
-//    delete signalMapper;
+    delete signalMapper;
     delete ui;
     for (auto button : buttonHash.keys()) {
         delete button;
@@ -146,10 +146,10 @@ void PlaceShipsWindow::updateGrid() {
         int y = i.value().second;
         switch(currentPlayer->getFieldState(x, y)) {
         case Empty:
-            i.key()->setStyleSheet("background-color: gray");
+            i.key()->setStyleSheet("background-color: #83d7ee");
             break;
         case Occupied:
-            i.key()->setStyleSheet("background-color: yellow");
+            i.key()->setStyleSheet("background-color: #7B3F00");
             break;
         default:
             return;
