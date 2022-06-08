@@ -15,8 +15,7 @@ bool Player::place(class Ship * ship_){
         if(orient == 1 && col >= 0 && col < mapSize && row+i >=0 && row+i < mapSize){
             for(int k = -1; k <= 1; k++){
                 for(int g = -1; g <= 1; g++){
-                    if(row+i+k >= 0 && row+i+k < mapSize && col+g >= 0 && col+g < mapSize
-                            && this->playerGrid.getFieldState(row+i+k, col+g) == Occupied){
+                    if(this->playerGrid.getFieldState(row+i+k, col+g) == Occupied){
                         return false;
                     }
                 }
@@ -24,8 +23,7 @@ bool Player::place(class Ship * ship_){
         }else if(orient == 0 && col + i >= 0 && col+i < mapSize && row >=0 && row<mapSize){
             for(int k = -1; k <= 1; k++){
                 for(int g = -1; g <= 1; g++){
-                    if(row+k >= 0 && row+k < mapSize && col+i+g >= 0 && col+i+g < mapSize
-                            && this->playerGrid.getFieldState(row+k, col+i+g) == Occupied){
+                    if(this->playerGrid.getFieldState(row+k, col+i+g) == Occupied){
                         return false;
                     }
                 }
