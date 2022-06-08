@@ -72,6 +72,9 @@ GameWindow::~GameWindow()
 }
 
 void GameWindow::grid1Clicked(QObject * widget) {
+    if (isOver) {
+        return;
+    }
     QPair<int, int> pair = buttonHash1.value(qobject_cast<QToolButton*>(widget));
     if (currentPlayer != player1) {
         return;
@@ -88,6 +91,9 @@ void GameWindow::grid1Clicked(QObject * widget) {
 }
 
 void GameWindow::grid2Clicked(QObject * widget) {
+    if (isOver) {
+        return;
+    }
     QPair<int, int> pair = buttonHash2.value(qobject_cast<QToolButton*>(widget));
     if (currentPlayer != player2) {
         return;
@@ -121,8 +127,9 @@ void GameWindow::updateGrid1() {
         }
     }
     //to dodałam ale włacza sie za pozno
-    if(!player1->isAlive()){
-        ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(currentPlayer->getName()));
+    if(!player2->isAlive()){
+        ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(player1->getName()));
+        isOver = true;
     }
 }
 
@@ -144,7 +151,8 @@ void GameWindow::updateGrid2() {
         }
     }
     //to dodałam ale włacza sie za pozno
-    if(!player2->isAlive()){
-        ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(currentPlayer->getName()));
+    if(!player1->isAlive()){
+        ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(player2->getName()));
+        isOver = true;
     }
 }
