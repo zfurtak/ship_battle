@@ -7,7 +7,7 @@
 #include <QPair>
 #include <QSignalMapper>
 
-PlaceShipsWindow::PlaceShipsWindow(Player & player1, Player & player2, QWidget *parent) :
+PlaceShipsWindow::PlaceShipsWindow(Player * player1, Player * player2, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PlaceShipsWindow),
     player1(player1),
@@ -18,7 +18,7 @@ PlaceShipsWindow::PlaceShipsWindow(Player & player1, Player & player2, QWidget *
     ui->setupUi(this);
     QGridLayout * grid = ui->gridLayout_2;
     QSignalMapper * signalMapper = new QSignalMapper(this);
-    ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer.getName()));
+    ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
 
     ui->ship_1_label->setText(QString::number(ship1ToPlaced));
     ui->ship_2_label->setText(QString::number(ship2ToPlaced));
@@ -61,41 +61,39 @@ PlaceShipsWindow::~PlaceShipsWindow()
 }
 
 void PlaceShipsWindow::showGameWindow() {
-    if(this->currentPlayer.allPlaced()){
-        if (&currentPlayer != &player2) {
-            currentPlayer = std::move(player2);
-            std::cout << &currentPlayer << "  " << &player2 << std::endl;
-            ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer.getName()));
-            updateGrid();
-            shipSize1[0] = Ship(1, -1, -1, 0);
-            shipSize1[1] = Ship(1, -1, -1, 0);
-            shipSize1[2] = Ship(1, -1, -1, 0);
-            shipSize1[3] = Ship(1, -1, -1, 0);
+    if (currentPlayer != player2) {
+        currentPlayer = player2;
+        std::cout << currentPlayer << "  " << player2 << std::endl;
+        ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
+        updateGrid();
+        shipSize1[0] = Ship(1, -1, -1, 0);
+        shipSize1[1] = Ship(1, -1, -1, 0);
+        shipSize1[2] = Ship(1, -1, -1, 0);
+        shipSize1[3] = Ship(1, -1, -1, 0);
 
-            shipSize2[0] = Ship(2, -1, -1, 0);
-            shipSize2[1] = Ship(2, -1, -1, 0);
-            shipSize2[2] = Ship(2, -1, -1, 0);
+        shipSize2[0] = Ship(2, -1, -1, 0);
+        shipSize2[1] = Ship(2, -1, -1, 0);
+        shipSize2[2] = Ship(2, -1, -1, 0);
 
-            shipSize3[0] = Ship(3, -1, -1, 0);
-            shipSize3[1] = Ship(3, -1, -1, 0);
+        shipSize3[0] = Ship(3, -1, -1, 0);
+        shipSize3[1] = Ship(3, -1, -1, 0);
 
-            shipSize4[0] = Ship(4, -1, -1, 0);
+        shipSize4[0] = Ship(4, -1, -1, 0);
 
-            ship1ToPlaced = 4;
-            ship2ToPlaced = 3;
-            ship3ToPlaced = 2;
-            ship4ToPlaced = 1;
-            ui->ship_1_label->setText(QString::number(ship1ToPlaced));
-            ui->ship_2_label->setText(QString::number(ship2ToPlaced));
-            ui->ship_3_label->setText(QString::number(ship3ToPlaced));
-            ui->ship_4_label->setText(QString::number(ship4ToPlaced));
-            return;
-        }
-        GameWindow gameWindow = GameWindow(player1, player2);
-        gameWindow.setModal(true);
-        hide();
-        gameWindow.exec();
+        ship1ToPlaced = 4;
+        ship2ToPlaced = 3;
+        ship3ToPlaced = 2;
+        ship4ToPlaced = 1;
+        ui->ship_1_label->setText(QString::number(ship1ToPlaced));
+        ui->ship_2_label->setText(QString::number(ship2ToPlaced));
+        ui->ship_3_label->setText(QString::number(ship3ToPlaced));
+        ui->ship_4_label->setText(QString::number(ship4ToPlaced));
+        return;
     }
+    GameWindow gameWindow = GameWindow(player1, player2);
+    gameWindow.setModal(true);
+    hide();
+    gameWindow.exec();
 }
 
 void PlaceShipsWindow::gridClicked(QObject * widget) {
@@ -106,7 +104,7 @@ void PlaceShipsWindow::gridClicked(QObject * widget) {
 
     currentShip->setPosition(pair.first, pair.second);
 
-    if (currentPlayer.place(currentShip)) {
+    if (currentPlayer->place(currentShip)) {
         resetButtonColors();
         switch(currentShip->getSize()) {
         case 1:
@@ -143,7 +141,7 @@ void PlaceShipsWindow::updateGrid() {
         i.next();
         int x = i.value().first;
         int y = i.value().second;
-        switch(currentPlayer.getFieldState(x, y)) {
+        switch(currentPlayer->getFieldState(x, y)) {
         case Empty:
             i.key()->setStyleSheet("background-color: gray");
             break;

@@ -2,7 +2,7 @@
 #include "ui_gamewindow.h"
 #include <QToolButton>
 
-GameWindow::GameWindow(Player & player1, Player & player2, QWidget *parent) :
+GameWindow::GameWindow(Player * player1, Player * player2, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GameWindow),
     player1(player1),
