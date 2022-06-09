@@ -6,6 +6,12 @@ Player::Player(std::string name) : name(name)
     playerGrid = Grid();
 }
 
+Player::~Player() {
+    for (auto ship : ships) {
+        delete ship;
+    }
+}
+
 bool Player::place(class Ship * ship_){
     int orient = ship_->getOrientation(); // 0 - poziom, 1 - pion
     int row = ship_->getX();

@@ -68,6 +68,8 @@ GameWindow::~GameWindow()
 
     delete signalMapper1;
     delete signalMapper2;
+    delete player1;
+    delete player2;
 }
 
 void GameWindow::grid1Clicked(QObject * widget) {

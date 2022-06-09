@@ -22,9 +22,9 @@ MainWindow::~MainWindow(){
 }
 
 void MainWindow::showPlaceShips() {
-    Player player1 = Player(ui->username->text().toStdString());
-    Player player2 = Player(ui->username_2->text().toStdString());
-    PlaceShipsWindow placeShipsWindow(&player1, &player2);
+    Player * player1 = new Player(ui->username->text().toStdString());
+    Player * player2 = new Player(ui->username_2->text().toStdString());
+    PlaceShipsWindow placeShipsWindow(player1, player2);
     placeShipsWindow.setModal(true);
     hide();
     placeShipsWindow.exec();

@@ -11,6 +11,7 @@ class Player
 {
 public:
     Player(std::string);
+    ~Player();
     bool isAlive() {
         return remainingShips != 0;
     }

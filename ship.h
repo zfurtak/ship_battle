@@ -40,7 +40,6 @@ private:
     int hitCounter = 0;
     int x, y;
     int orientation;  // 0 - poziom, 1 - pion
-    bool * parts;
 };
 
 #endif // SHIP_H
