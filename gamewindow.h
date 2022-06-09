@@ -32,6 +32,7 @@ private:
 
     void updateGrid1();
     void updateGrid2();
+    void updateGridsAfterEnd();
 public slots:
     void grid1Clicked(QObject*);
     void grid2Clicked(QObject*);

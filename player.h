@@ -6,7 +6,6 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
 
 class Player
 {
@@ -27,12 +26,6 @@ public:
     }
     GridField getFieldState(int x, int y) {
         return playerGrid.getFieldState(x, y);
-    }
-    void printShips() {
-        for (auto ship : ships) {
-            std::cout << ship << std::endl;
-        }
-        std::cout << "KONIEC" << std::endl;
     }
 private:
     std::string name;

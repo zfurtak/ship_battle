@@ -3,7 +3,6 @@
 #include "gamewindow.h"
 #include "defines.h"
 #include <QToolButton>
-#include <iostream>
 #include <QPair>
 #include <QSignalMapper>
 
@@ -76,8 +75,6 @@ PlaceShipsWindow::~PlaceShipsWindow()
 
 void PlaceShipsWindow::showGameWindow() {
     if(this->currentPlayer->allPlaced()){
-        std::cout << currentPlayer->getName() << std::endl;
-        currentPlayer->printShips();
         if (currentPlayer != player2) {
             currentPlayer = player2;
             ui->label->setText(QString(" Układa gracz ") + QString::fromStdString(currentPlayer->getName()));
@@ -229,7 +226,6 @@ void PlaceShipsWindow::changeShipTo4(){
 }
 
 void PlaceShipsWindow::changeOrientation() {
-    std::cout << currentShip << std::endl;
     if (currentShip != nullptr) {
         currentShip->changeOrientation();
         if (currentShip->getOrientation() == 0) {

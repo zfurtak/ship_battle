@@ -2,7 +2,6 @@
 #include "ui_gamewindow.h"
 #include "defines.h"
 #include <QToolButton>
-#include <iostream>
 
 GameWindow::GameWindow(Player * player1, Player * player2, QWidget *parent) :
     QDialog(parent),
@@ -130,6 +129,7 @@ void GameWindow::updateGrid1() {
     if(!player2->isAlive()){
         ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(player1->getName()));
         isOver = true;
+        updateGridsAfterEnd();
     }
 }
 
@@ -154,5 +154,48 @@ void GameWindow::updateGrid2() {
     if(!player1->isAlive()){
         ui->turn_label->setText(QString(" Wygrał gracz: ") + QString::fromStdString(player2->getName()));
         isOver = true;
+        updateGridsAfterEnd();
+    }
+}
+
+void GameWindow::updateGridsAfterEnd() {
+    QHashIterator<QToolButton*, QPair<int, int>> i(buttonHash1);
+    while (i.hasNext()) {
+        i.next();
+        int x = i.value().first;
+        int y = i.value().second;
+        switch(player2->getFieldState(x, y)) {
+        case CheckedFree:
+            i.key()->setStyleSheet("background-color: #273be2");
+            break;
+        case HitShip:
+            i.key()->setStyleSheet("background-color: #7B3F00");
+            break;
+        case Occupied:
+            i.key()->setStyleSheet("background-color: red");
+            break;
+        default:
+            i.key()->setStyleSheet("");
+        }
+    }
+
+    QHashIterator<QToolButton*, QPair<int, int>> i1(buttonHash2);
+    while (i1.hasNext()) {
+        i1.next();
+        int x = i1.value().first;
+        int y = i1.value().second;
+        switch(player1->getFieldState(x, y)) {
+        case CheckedFree:
+            i1.key()->setStyleSheet("background-color: #273be2");
+            break;
+        case HitShip:
+            i1.key()->setStyleSheet("background-color: #7B3F00");
+            break;
+        case Occupied:
+            i1.key()->setStyleSheet("background-color: red");
+            break;
+        default:
+            i1.key()->setStyleSheet("");
+        }
     }
 }
