@@ -25,6 +25,7 @@ void MainWindow::showPlaceShips() {
     Player * player1 = new Player(ui->username->text().toStdString());
     Player * player2 = new Player(ui->username_2->text().toStdString());
     PlaceShipsWindow placeShipsWindow(player1, player2);
+    placeShipsWindow.setWindowTitle("STATKI");
     placeShipsWindow.setModal(true);
     hide();
     placeShipsWindow.exec();

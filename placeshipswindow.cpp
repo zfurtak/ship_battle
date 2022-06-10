@@ -104,6 +104,7 @@ void PlaceShipsWindow::showGameWindow() {
             return;
         }
         GameWindow gameWindow = GameWindow(player1, player2);
+        gameWindow.setWindowTitle("STATKI");
         gameWindow.setModal(true);
         hide();
         gameWindow.exec();
