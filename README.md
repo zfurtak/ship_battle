@@ -36,5 +36,6 @@ Zasady te same, tylko forma wygodniejsza, sprawdź sam :)
 
 
 ### Demo gry:
-In progress...
+![statki](https://user-images.githubusercontent.com/74431989/173022744-08670259-f85e-4802-a47f-62808777e3d7.gif)
+
 
